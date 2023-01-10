@@ -9,10 +9,9 @@ namespace ModeloAnemicoVsEnrriquecido
     {
         static void Main(string[] args)
         {
-            Cliente cliente = new Cliente();
+            Cliente cliente = new Cliente(1, "Jackson");
 
-            cliente.Id = 1;
-            cliente.Nome = "Jackson";
+            cliente.Update(1, "Jackson");
 
             Console.WriteLine(JsonSerializer.Serialize(cliente));
         }
