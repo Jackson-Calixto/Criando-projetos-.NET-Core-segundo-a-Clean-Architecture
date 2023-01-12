@@ -8,11 +8,11 @@ namespace DependencyInversion
 {
     class RecuperarSenha
     {
-        private MySqlConnection conexaoBanco;
+        private IDataBaseConnection conexaoBanco;
 
-        public RecuperarSenha()
+        public RecuperarSenha(IDataBaseConnection _connection)
         {
-            conexaoBanco = new MySqlConnection();
+            conexaoBanco = _connection;
             //código para recuperar senha
         }
     }

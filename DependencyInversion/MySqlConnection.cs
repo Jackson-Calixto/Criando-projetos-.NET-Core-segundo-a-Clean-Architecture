@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DependencyInversion
 {
-    class MySqlConnection
+    class MySqlConnection : IDataBaseConnection
     {
         public void Conectar()
         {
