@@ -38,7 +38,7 @@ namespace CleanArcMvc.Domain.Entities
             DomainExceptionValidation.When(string.IsNullOrEmpty(name), "Invalid name. Name is required");
             DomainExceptionValidation.When(name.Length < 3, "Invalid name, too short, minimum 3 charecters");
             DomainExceptionValidation.When(string.IsNullOrEmpty(description), "Invalid description. Description is required");
-            DomainExceptionValidation.When(description.Length < 5, "Invalid description, too short, minimum 3 charecters");
+            DomainExceptionValidation.When(description.Length < 5, "Invalid description, too short, minimum 5 charecters");
             DomainExceptionValidation.When(price < 0, "Invalid price value");
             DomainExceptionValidation.When(stock < 0, "Invalid stock value");
             DomainExceptionValidation.When(image.Length > 250, "Invalid image name, too long, maximum 250 charecters");
