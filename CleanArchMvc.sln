@@ -8,15 +8,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		CleanArcMvc.png = CleanArcMvc.png
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArcMvc.Application", "CleanArcMvc.Application\CleanArcMvc.Application.csproj", "{13507B3F-8E4C-4A55-8B9B-EDD3E5E66CDC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArcMvc.Application", "CleanArcMvc.Application\CleanArcMvc.Application.csproj", "{13507B3F-8E4C-4A55-8B9B-EDD3E5E66CDC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArcMvc.Domain", "CleanArcMvc.Domain\CleanArcMvc.Domain.csproj", "{39E1A74C-5E31-4A5F-B489-CC4327D0AD08}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArcMvc.Domain", "CleanArcMvc.Domain\CleanArcMvc.Domain.csproj", "{39E1A74C-5E31-4A5F-B489-CC4327D0AD08}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArcMvc.Infra.Data", "CleanArcMvc.Infra.Data\CleanArcMvc.Infra.Data.csproj", "{5E745DF3-F60B-4196-8B14-76CF73A7CF6B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArcMvc.Infra.Data", "CleanArcMvc.Infra.Data\CleanArcMvc.Infra.Data.csproj", "{5E745DF3-F60B-4196-8B14-76CF73A7CF6B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArcMvc.Infra.IoC", "CleanArcMvc.Infra.IoC\CleanArcMvc.Infra.IoC.csproj", "{A9EFCF91-ECD5-452E-8C8C-520ADAE31552}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArcMvc.Infra.IoC", "CleanArcMvc.Infra.IoC\CleanArcMvc.Infra.IoC.csproj", "{A9EFCF91-ECD5-452E-8C8C-520ADAE31552}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArcMvc.WebUI", "CleanArcMvc.WebUI\CleanArcMvc.WebUI.csproj", "{B46C0F98-F509-4031-B071-5972606CA766}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArcMvc.WebUI", "CleanArcMvc.WebUI\CleanArcMvc.WebUI.csproj", "{B46C0F98-F509-4031-B071-5972606CA766}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArcMvc.Domain.Tests", "CleanArcMvc.Domain.Tests\CleanArcMvc.Domain.Tests.csproj", "{3F5A6205-8149-4479-9078-40CF63D2FAB1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,12 +28,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {E37F2349-6660-4E38-88E3-DED81BFBDA94}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{13507B3F-8E4C-4A55-8B9B-EDD3E5E66CDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -94,5 +90,23 @@ Global
 		{B46C0F98-F509-4031-B071-5972606CA766}.Release|x64.Build.0 = Release|Any CPU
 		{B46C0F98-F509-4031-B071-5972606CA766}.Release|x86.ActiveCfg = Release|Any CPU
 		{B46C0F98-F509-4031-B071-5972606CA766}.Release|x86.Build.0 = Release|Any CPU
+		{3F5A6205-8149-4479-9078-40CF63D2FAB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F5A6205-8149-4479-9078-40CF63D2FAB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F5A6205-8149-4479-9078-40CF63D2FAB1}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{3F5A6205-8149-4479-9078-40CF63D2FAB1}.Debug|x64.Build.0 = Debug|Any CPU
+		{3F5A6205-8149-4479-9078-40CF63D2FAB1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3F5A6205-8149-4479-9078-40CF63D2FAB1}.Debug|x86.Build.0 = Debug|Any CPU
+		{3F5A6205-8149-4479-9078-40CF63D2FAB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F5A6205-8149-4479-9078-40CF63D2FAB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F5A6205-8149-4479-9078-40CF63D2FAB1}.Release|x64.ActiveCfg = Release|Any CPU
+		{3F5A6205-8149-4479-9078-40CF63D2FAB1}.Release|x64.Build.0 = Release|Any CPU
+		{3F5A6205-8149-4479-9078-40CF63D2FAB1}.Release|x86.ActiveCfg = Release|Any CPU
+		{3F5A6205-8149-4479-9078-40CF63D2FAB1}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E37F2349-6660-4E38-88E3-DED81BFBDA94}
 	EndGlobalSection
 EndGlobal
