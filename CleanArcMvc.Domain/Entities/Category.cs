@@ -7,20 +7,24 @@ using System.Threading.Tasks;
 
 namespace CleanArcMvc.Domain.Entities
 {
-    public sealed class Category
+    public sealed class Category : Entity
     {
-        public int Id { get; private set; }
         public string Name { get; private set; }
+
+        public Category(int id, string name)
+        {
+            DomainExceptionValidation.When(id <= 0, "Invalid Id value");
+            Id = id;
+            ValidateDomain(name);
+        }
 
         public Category(string name)
         {
             ValidateDomain(name);
         }
 
-        public Category(int id, string name)
+        public void Update(string name)
         {
-            DomainExceptionValidation.When(id <= 0, "Invalid Id value");
-            Id = id;
             ValidateDomain(name);
         }
 
