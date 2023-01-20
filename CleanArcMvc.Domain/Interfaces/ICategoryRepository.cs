@@ -10,7 +10,7 @@ namespace CleanArcMvc.Domain.Interfaces
         //IEnumerable<> - Defines as List of one or more records
         Task<IEnumerable<Category>> GetCategoriesAsync();
         Task<Category> GetByIdAsync(int? id);
-        Task<Category> CreateAsync(Category category);
+        Task<Category> AddAsync(Category category);
         Task<Category> UpdateAsync(Category category);
         Task<Category> RemoveAsync(Category category);
     }

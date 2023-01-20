@@ -18,7 +18,7 @@ namespace CleanArcMvc.Infra.Data.Repositories
             _productContext = productContext;
         }
 
-        public async Task<Product> CreateAsync(Product product)
+        public async Task<Product> AddAsync(Product product)
         {
             _productContext.Products.Add(product);
             await _productContext.SaveChangesAsync();
