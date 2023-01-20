@@ -15,14 +15,14 @@ namespace CleanArcMvc.Domain.Entities
         public int Stock { get; private set; }
         public string Image { get; private set; }
 
-        public Product(int id, string name, string description, decimal price, int stock, string image, int categoryId, Category category)
+        public Product(int id, string name, string description, decimal price, int stock, string image, int categoryId)
         {
             DomainExceptionValidation.When(id <= 0, "Invalid Id value");
             Id = id;
             ValidateDomain(name, description, price, stock, image);
         }
 
-        public Product(string name, string description, decimal price, int stock, string image, int categoryId, Category category)
+        public Product(string name, string description, decimal price, int stock, string image, int categoryId)
         {
             ValidateDomain(name, description, price, stock, image);
         }
