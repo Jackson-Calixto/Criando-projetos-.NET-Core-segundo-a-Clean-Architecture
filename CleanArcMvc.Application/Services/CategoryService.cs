@@ -15,15 +15,9 @@ namespace CleanArcMvc.Application.Services
         private readonly IMapper _mapper;
         public CategoryService(ICategoryRepository categoryRepository, IMapper mapper)
         {
-            _categoryRepository = categoryRepository;
+            _categoryRepository = categoryRepository ?? throw new ArgumentNullException(nameof(categoryRepository));
             _mapper = mapper;
         }
-        public async Task Add(CategoryDTO categoryDto)
-        {
-            var category = _mapper.Map<Category>(categoryDto);
-            await _categoryRepository.AddAsync(category);
-        }
-
         public async Task<CategoryDTO> GetById(int? id)
         {
             var category = await _categoryRepository.GetByIdAsync(id);
@@ -34,6 +28,12 @@ namespace CleanArcMvc.Application.Services
         {
             var categories = await _categoryRepository.GetCategoriesAsync();
             return _mapper.Map<IEnumerable<CategoryDTO>>(categories);
+        }
+
+        public async Task Add(CategoryDTO categoryDto)
+        {
+            var category = _mapper.Map<Category>(categoryDto);
+            await _categoryRepository.AddAsync(category);
         }
 
         public async Task Update(CategoryDTO categoryDto)
