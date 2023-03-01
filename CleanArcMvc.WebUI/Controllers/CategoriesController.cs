@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using CleanArcMvc.Application.DTOs;
 using CleanArcMvc.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -34,5 +35,34 @@ namespace CleanArcMvc.WebUI.Controllers
 			}
 			return View(category);
 		}
+		[HttpGet()]
+		public async Task<IActionResult> Edit(int? id)
+		{
+			if (id == null) return NotFound();
+
+			var categoryDto = await _categoryService.GetById(id);
+
+			if (categoryDto == null) return NotFound();
+
+			return View(categoryDto);
+		}
+		[HttpPost()]
+		public async Task<IActionResult> Edit(CategoryDTO categoryDto)
+		{
+			if (ModelState.IsValid)
+			{
+				try
+				{
+					await _categoryService.Update(categoryDto);
+				}
+				catch (Exception)
+				{
+					throw;
+				}
+				return RedirectToAction(nameof(Index));
+			}
+			return View(categoryDto);
+		}
+
 	}
 }
