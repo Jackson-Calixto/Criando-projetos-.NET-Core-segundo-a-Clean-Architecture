@@ -1,6 +1,8 @@
-﻿using System.Threading.Tasks;
+﻿using System.IO;
+using System.Threading.Tasks;
 using CleanArcMvc.Application.DTOs;
 using CleanArcMvc.Application.Interfaces;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
@@ -10,11 +12,13 @@ namespace CleanArcMvc.WebUI.Controllers
     {
         private readonly IProductService _productService;
         private readonly ICategoryService _categoryService;
+        private readonly IWebHostEnvironment _environment;
 
-        public ProductsController(IProductService productService, ICategoryService categoryService)
+        public ProductsController(IProductService productService, ICategoryService categoryService, IWebHostEnvironment environment)
         {
             _productService = productService;
             _categoryService = categoryService;
+            _environment = environment;
         }
         [HttpGet]
         public async Task<IActionResult> Index()
@@ -77,6 +81,22 @@ namespace CleanArcMvc.WebUI.Controllers
         {
             await _productService.Remove(id);
             return RedirectToAction(nameof(Index));
+        }
+        [HttpGet]
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null) return NotFound();
+
+            var productDto = await _productService.GetById(id);
+
+            if (productDto == null) return NotFound();
+
+            var wwwroot = _environment.WebRootPath;
+            var image = Path.Combine(wwwroot, "images\\" + productDto.Image);
+            var exists = System.IO.File.Exists(image);
+            ViewBag.ImageExist = exists;
+
+            return View(productDto);
         }
     }
 }
