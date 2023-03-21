@@ -5,4 +5,5 @@
 /.vs
 bin
 obj
-/CleanArcMvc.WebUI/CleanArchitecture.db
+*.db*
+*.log
