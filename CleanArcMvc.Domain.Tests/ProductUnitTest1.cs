@@ -49,7 +49,7 @@ namespace CleanArcMvc.Domain.Tests
             Action action = () => new Product(1, "Ca", "Description", 0, 0, "");
             action.Should()
                 .Throw<CleanArcMvc.Domain.Validation.DomainExceptionValidation>()
-                .WithMessage("Invalid name, too short, minimum 3 charecters");
+                .WithMessage("Invalid name, too short, minimum 3 characters");
         }
 
         [Fact]
@@ -76,7 +76,7 @@ namespace CleanArcMvc.Domain.Tests
             Action action = () => new Product(1, "Product Name", "Desc", 0, 0, "");
             action.Should()
                 .Throw<CleanArcMvc.Domain.Validation.DomainExceptionValidation>()
-                .WithMessage("Invalid description, too short, minimum 5 charecters");
+                .WithMessage("Invalid description, too short, minimum 5 characters");
         }
 
         [Fact]
@@ -103,7 +103,7 @@ namespace CleanArcMvc.Domain.Tests
             Action action = () => new Product(1, "Product Name", "Description", 0, 0, "xxxxxxxxxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxxx ");
             action.Should()
                 .Throw<CleanArcMvc.Domain.Validation.DomainExceptionValidation>()
-                .WithMessage("Invalid image name, too long, maximum 250 charecters");
+                .WithMessage("Invalid image name, too long, maximum 250 characters");
         }
         
         [Fact]
