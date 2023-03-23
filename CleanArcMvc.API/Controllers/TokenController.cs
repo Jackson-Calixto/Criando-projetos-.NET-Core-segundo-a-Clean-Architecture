@@ -25,6 +25,23 @@ namespace CleanArcMvc.API.Controllers
             _configuration = configuration;
         }
 
+        [HttpPost("CreateUser")]        
+        public async Task<ActionResult> CreateUser([FromBody] LoginModel userInfo)
+        {
+            var result = await _authentication.ResisterUser(userInfo.Email, userInfo.Password);
+
+            if (result)
+            {
+                //return GenerateToken(userInfo);
+                return Ok($"User {userInfo.Email} was created successfully");
+            }
+            else
+            {
+                ModelState.AddModelError(string.Empty, "Invalid User creation");
+                return BadRequest(ModelState);
+            }
+        }
+
         [HttpPost("LoginUser")]
         public async Task<ActionResult<UserToken>> Login([FromBody] LoginModel userInfo)
         {
