@@ -25,7 +25,8 @@ namespace CleanArcMvc.API.Controllers
             _configuration = configuration;
         }
 
-        [HttpPost("CreateUser")]        
+        [HttpPost("CreateUser")]
+        [ApiExplorerSettings(IgnoreApi = true)]        
         public async Task<ActionResult> CreateUser([FromBody] LoginModel userInfo)
         {
             var result = await _authentication.ResisterUser(userInfo.Email, userInfo.Password);
