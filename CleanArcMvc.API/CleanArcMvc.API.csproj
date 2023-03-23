@@ -12,4 +12,8 @@
     <ProjectReference Include="..\CleanArcMvc.Infra.IoC\CleanArcMvc.Infra.IoC.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+
 </Project>
