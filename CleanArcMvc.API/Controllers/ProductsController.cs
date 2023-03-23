@@ -29,7 +29,7 @@ namespace CleanArcMvc.API.Controllers
             return Ok(products);
         }
 
-        [HttpGet("{id}", Name = "GetProduct")]
+        [HttpGet("{id:int}", Name = "GetProduct")]
         public async Task<ActionResult<ProductDTO>> Get(int id)
         {
             var product = await _productService.GetById(id);
