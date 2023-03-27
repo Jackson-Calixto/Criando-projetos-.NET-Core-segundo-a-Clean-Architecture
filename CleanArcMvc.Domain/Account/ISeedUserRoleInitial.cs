@@ -1,8 +1,7 @@
-namespace CleanArcMvc.Domain.Account
+namespace CleanArcMvc.Domain.Account;
+
+public interface ISeedUserRoleInitial
 {
-    public interface ISeedUserRoleInitial
-    {
-        void SeedUsers();
-        void SeedRoles();
-    }
+    void SeedUsers();
+    void SeedRoles();
 }
