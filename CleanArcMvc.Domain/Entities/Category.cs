@@ -9,7 +9,7 @@ namespace CleanArcMvc.Domain.Entities;
 
 public sealed class Category : Entity
 {
-    public string Name { get; private set; }
+    public string? Name { get; private set; }
 
     public Category(int id, string name)
     {
@@ -28,7 +28,7 @@ public sealed class Category : Entity
         ValidateDomain(name);
     }
 
-    public ICollection<Product> Products { get; set; }
+    public ICollection<Product>? Products { get; set; }
 
     private void ValidateDomain(string name)
     {
