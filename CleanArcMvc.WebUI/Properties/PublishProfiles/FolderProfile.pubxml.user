@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\HZJ0RQ\source\repos\Jackson-Calixto\Criando-projetos-.NET-Core-segundo-a-Clean-Architecture\CleanArcMvc.WebUI\bin\Release\net7.0\publish\</_PublishTargetUrl>
+    <History>True|2023-08-01T01:10:03.9056604Z;True|2023-07-31T22:05:40.6125243-03:00;True|2023-07-31T21:59:06.7111594-03:00;True|2023-07-31T21:55:03.5095721-03:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=CleanArchitecture.db</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

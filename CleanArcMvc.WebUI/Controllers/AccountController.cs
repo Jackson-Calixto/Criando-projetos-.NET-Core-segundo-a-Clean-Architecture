@@ -38,7 +38,7 @@ namespace CleanArcMvc.WebUI.Controllers
             }
             else
             {
-                ModelState.AddModelError(string.Empty, "Invalid login attempt.(password must be strong).");
+                ModelState.AddModelError(string.Empty, "Invalid login attempt.");
                 return View(model);
             }
         }

@@ -1,12 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace CleanArcMvc.Infra.IoC
 {
@@ -32,7 +28,7 @@ namespace CleanArcMvc.Infra.IoC
                     ValidateLifetime = true,
                     ValidateIssuerSigningKey = true,
                     //valores validos
-                    ValidIssuer =  configuration["Jwt:Issuer"],
+                    ValidIssuer = configuration["Jwt:Issuer"],
                     ValidAudience = configuration["Jwt:Audience"],
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:SecretKey"])),
                     ClockSkew = TimeSpan.Zero

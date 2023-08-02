@@ -42,10 +42,10 @@ app.Run();
 void SeedUserRoles(IApplicationBuilder app)
 {
     using (var serviceScope = app.ApplicationServices.CreateScope())
-    {
-        var seed = serviceScope.ServiceProvider
-                               .GetService<ISeedUserRoleInitial>();
-        seed.SeedUsers();
+    {        
+        var seed = serviceScope.ServiceProvider.GetService<ISeedUserRoleInitial>();
+        
         seed.SeedRoles();
+        seed.SeedUsers();
     }
 }

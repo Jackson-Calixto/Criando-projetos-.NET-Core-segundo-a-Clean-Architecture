@@ -13,9 +13,9 @@ namespace CleanArcMvc.Infra.Data.Context
         public DbSet<Product>? Products { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
+        {            
             base.OnModelCreating(modelBuilder);
-            modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);                        
         }
     }
 }
